@@ -1791,7 +1791,7 @@ var ColoredUsernames;
             if (data.author == kname5) {
 
                 var pikarand = Math.floor(Math.random() * 62) + 1;
-                //pikarand = 62; //362021
+                pikarand = 58; //362021
                 console.log(pikarand);
                 var recordback = Math.floor(Math.random() * 1000) + 1;
                 var mnw_lag_name = Math.floor(Math.random() * 5000) + 1;
