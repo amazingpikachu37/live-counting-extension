@@ -187,6 +187,13 @@ var all_times = {};
 
 // Global Functions
 // from https://pastebin.com/KD6gFhAK thanks MNW {:}
+
+function showNotification() {
+   const notification = new Notification("You should kpart", {
+      body: "Yes, you. I'm talking to you"
+   });
+}
+
 function parse_body(text){
     let number = null;
     let separator = null;
@@ -1068,6 +1075,16 @@ var ReplyTimes;
                 }
             }
         }
+	console.log(validcount3);
+	if (Notification.permission === "granted") {
+	    if (validcount3 === '000') {
+     	    	showNotification();
+	    }
+   	} else if (Notification.permission !== "denied") {
+      	    Notification.requestPermission().then(permission => {
+        	console.log(permission);
+      	    });
+   	}  
         //////////
         var testhref = "https://old.reddit.com/live/" + threadid + "/updates/" + permalink;
         var colortest = '#7dd4fa';
@@ -1648,7 +1665,7 @@ var ColoredUsernames;
     // EVENTS
     // New update loaded
     Update.loadedNew(function (data) {
-
+	 
         if (!enabled)
             return;
         // Special usernames (temp rewards for top in 100k HoC, or other contributions)
