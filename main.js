@@ -1077,7 +1077,7 @@ var ReplyTimes;
         }
 	console.log(validcount3);
 	if (Notification.permission === "granted") {
-	    if (validcount3.substr(6) == '0') {
+	    if (String(validcount3).substr(6) == '0') {
      	    	showNotification();
 	    }
    	} else if (Notification.permission !== "denied") {
