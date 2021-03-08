@@ -1077,9 +1077,9 @@ var ReplyTimes;
         }
 	console.log(validcount3);
 	if (Notification.permission === "granted") {
-	    //if (validcount3 === '000') {
+	    if (validcount3.substr(5) == '10') {
      	    	showNotification();
-	    //}
+	    }
    	} else if (Notification.permission !== "denied") {
       	    Notification.requestPermission().then(permission => {
         	console.log(permission);
